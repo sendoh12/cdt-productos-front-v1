@@ -89,7 +89,7 @@ function Producto() {
         <Grid container item style={{ width: '80%', textAlign: 'center', border: '1px solid grey' }} spacing={1}>
           <TextField
             id="bPelicula"
-            label="Buscar pelicula"
+            label="Buscar producto"
             onChange={onChangeProducto}
             style={{ width: '100%' }}
             color="secondary"
@@ -103,12 +103,21 @@ function Producto() {
           </Grid>
         )}
 
-        <Grid container item style={{ width: '100%', textAlign: 'center' }} marginTop={3} spacing={1}>
+        <Grid container item style={{ width: '90%', textAlign: 'center', margin: '30px 0' }} marginTop={3} spacing={1}>
           {productos.map((item) => (
             // Without the `key`, React will fire a key warning
             <React.Fragment key={item.id_producto}>
-              <Grid item xs={12} sm={6} md={3} textAlign={'center'} marginTop={1}>
-                <Grid item style={{ height: '8vh' }}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                textAlign={'center'}
+                marginTop={5}
+                style={{ height: '40vh' }}
+                spacing={1}
+              >
+                <Grid item style={{ height: '7vh' }}>
                   {item.nombre_producto}
                 </Grid>
                 <Button
@@ -118,13 +127,23 @@ function Producto() {
                 >
                   <CardMedia
                     component="img"
-                    height="150"
-                    width="150"
-                    sx={{ maxWidth: 300 }}
+                    height="250"
+                    width="300"
+                    sx={{ maxWidth: 400 }}
                     image={item.imagen_producto}
                     alt="Paella dish"
+                    style={{ height: '30vh' }}
                   />
                 </Button>
+
+                <Grid container style={{ height: '3vh', textAlign: 'center' }}>
+                  <Grid item md={6} xs={6} sm={6} style={{ backgroundColor: '#1976d2', color: '#ffffff' }}>
+                    Precio: ${item.precio_producto}
+                  </Grid>
+                  <Grid item md={6} xs={6} sm={6}>
+                    Producto: {item.estado_producto}
+                  </Grid>
+                </Grid>
               </Grid>
             </React.Fragment>
           ))}
