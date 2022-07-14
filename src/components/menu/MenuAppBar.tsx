@@ -1,9 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
-import Grid from '@mui/material/Grid';
-import HomeIcon from '@mui/icons-material/Home';
-
-import MenuAppBar from '../menu/MenuAppBar';
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,20 +12,21 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import Producto from '../../app/productos/Producto';
+import { Route, Routes } from 'react-router-dom';
 
-export interface HederData {
-  titleHeder: string;
-}
-
-const pages = ['Semi Nuevos', 'Usados'];
+const pages = ['Nuevos', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function Header(props: HederData) {
-  const { titleHeder } = props;
-
+const MenuAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  //   const handleOpenNavMenu = (event) => {
+  //     setAnchorElNav(event.currentTarget);
+  //   };
+  //   const handleOpenUserMenu = (event) => {
+  //     setAnchorElUser(event.currentTarget);
+  //   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -60,7 +56,7 @@ function Header(props: HederData) {
               textDecoration: 'none',
             }}
           >
-            Lo Nuevo
+            LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -115,15 +111,11 @@ function Header(props: HederData) {
               textDecoration: 'none',
             }}
           >
-            Lo Nuevo
+            LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={() => window.history.pushState('', '', '/')}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                 {page}
               </Button>
             ))}
@@ -162,6 +154,5 @@ function Header(props: HederData) {
       </Container>
     </AppBar>
   );
-}
-
-export default Header;
+};
+export default MenuAppBar;

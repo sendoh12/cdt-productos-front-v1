@@ -11,12 +11,12 @@ function Footer() {
       <Toolbar variant="dense">
         <Grid container style={{ display: 'flex', margin: 'auto' }}>
           <Grid item xs={4} sx={{ textAlign: 'left', alignItems: 'left', marginTop: '2px' }}>
-            <img src={BancoAzteca} alt="BancoAzteca" style={{ width: '115px', height: '95px', objectFit: 'contain' }} />
+            {/* <img src={BancoAzteca} alt="BancoAzteca" style={{ width: '115px', height: '95px', objectFit: 'contain' }} /> */}
           </Grid>
           <Grid item xs={4} sx={{ textAlign: 'center', alignItems: 'center', marginTop: '30px' }}>
             <Typography variant="h4">
               <Box sx={{ fontWeight: 'bold' }}>
-                <Box component="span" sx={{ color: '#0db02b' }}>
+                {/* <Box component="span" sx={{ color: '#0db02b' }}>
                   C
                 </Box>
                 <Box component="span" sx={{ color: '#006647' }}>
@@ -24,7 +24,7 @@ function Footer() {
                 </Box>
                 <Box component="span" sx={{ color: '#224e37' }}>
                   T
-                </Box>
+                </Box> */}
               </Box>
             </Typography>
           </Grid>
