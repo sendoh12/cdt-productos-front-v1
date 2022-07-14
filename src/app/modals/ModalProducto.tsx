@@ -95,7 +95,6 @@ export default function ModalProducto(props: Content) {
       next: (res) => {
         console.log('resultado', res.data);
         setbandera(true);
-        // setProductos(res.data);
       },
       error: (error) => {
         mostrarAlerta('Favor de contactar a soporte');
